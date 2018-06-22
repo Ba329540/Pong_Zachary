@@ -48,14 +48,15 @@ function create () {
   ball.setCollideWorldBounds(true);
   ball.setBounce(1);
   resetBall();
-  this.physics.add.collider(ball, redPaddle, handleBounce, null, this);
-  this.physics.add.collider(ball, bluePaddle, handleBounce, null, this);
+  this.physics.add.collider(redPaddle, ball, handleBounce, null, this);
+  this.physics.add.collider(bluePaddle, ball, handleBounce, null, this);
 
   redScoreText = this.add.text(100, 30, 'Score: ' + redScore, {
     color: 'red', align: 'center'});
     blueScoreText = this.add.text(600, 30, 'Score: ' + redScore, {
       color: 'blue', align: 'center'});
   cursors = this.input.keyboard.createCursorKeys();
+
 
 }
 function update () {
@@ -100,7 +101,14 @@ function resetBall () {
   ball.setVelocity(ballSpeedX, ballSpeedY);
 }
 
-function handleBounce () {
+function handleBounce (paddle) {
   var tmpSpeedX = ball.body.velocity.x;
   ball.setVelocityX(tmpSpeedX < 0 ? tmpSpeedX - 50 : tmpSpeedX + 50);
+  var tmpSpeedY = ball.body.velocity.y;
+  if (ball.body.position.y < paddle.body.position.y); {
+    tmpSpeedY -= 50;
+  } else {
+    tmpSpeedY += 50;
+  }
+  ball.setVelocityY(tmpSpeedY);
   }
