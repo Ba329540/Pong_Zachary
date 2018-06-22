@@ -105,7 +105,7 @@ function handleBounce (paddle) {
   var tmpSpeedX = ball.body.velocity.x;
   ball.setVelocityX(tmpSpeedX < 0 ? tmpSpeedX - 50 : tmpSpeedX + 50);
   var tmpSpeedY = ball.body.velocity.y;
-  if (ball.body.position.y < paddle.body.position.y); {
+  if (ball.body.position.y < paddle.body.position.y) {
     tmpSpeedY -= 50;
   } else {
     tmpSpeedY += 50;
