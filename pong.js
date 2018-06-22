@@ -86,9 +86,12 @@ if  (ball.body.position.x > 770) {
   blueScore++;
   blueScoreText.setText('Score: ' + blueScore);
 } else {
-if (redScore === 10 || blueScore === 10) {
+if (redScore === 10) {
   this.physics.pause();
   this.add.text(355, 200, 'GAME OVER');
+} else {
+  this.physics.pause();
+  this.add.text(355, 200, 'You Won!');
 }
 }
 }
