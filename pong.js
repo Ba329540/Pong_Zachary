@@ -68,9 +68,9 @@ function update () {
     bluePaddle.setVelocityY(0);
   }
 if (redPaddle.body.position.y >= ball.body.position.y) {
-  redPaddle.setVelocityY(-300);
+  redPaddle.setVelocityY(-225);
 } else if (redPaddle.body.position.y < ball.body.position.y) {
-  redPaddle.setVelocityY(300);
+  redPaddle.setVelocityY(225);
 } else {
   redPaddle.setVelocityY(0);
 }
