@@ -61,9 +61,9 @@ function create () {
 }
 function update () {
   if (cursors.up.isDown) {
-    bluePaddle.setVelocityY(-300);
+    bluePaddle.setVelocityY(-500);
   } else if (cursors.down.isDown) {
-    bluePaddle.setVelocityY(300);
+    bluePaddle.setVelocityY(500);
   } else {
     bluePaddle.setVelocityY(0);
   }
